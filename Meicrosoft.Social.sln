@@ -8,8 +8,76 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{096F1E
 		docker\docker-compose.yml = docker\docker-compose.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4F9D8333-A62C-4963-B268-2069FDE2C4D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3A248B16-EB1B-4CDB-835D-C53C69EE806D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Command", "Command", "{5F9118B0-8C5E-4AAA-B2FD-54EBC12FB9EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Query", "Query", "{875E02FF-63D1-4955-9125-A667CD156511}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meicrosoft.Social.Core", "src\Core\Meicrosoft.Social.Core\Meicrosoft.Social.Core.csproj", "{C1E1B185-4463-4D0D-8968-8372915EE647}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meicrosoft.Social.Command.API", "src\Command\Meicrosoft.Social.Command.API\Meicrosoft.Social.Command.API.csproj", "{BC62C1BF-B05C-4D40-9238-63241E6DD824}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meicrosoft.Social.Command.Domain", "src\Command\Meicrosoft.Social.Command.Domain\Meicrosoft.Social.Command.Domain.csproj", "{F73EAEF7-68A2-40DE-A87C-774A34DD603C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meicrosoft.Social.Command.Infra", "src\Command\Meicrosoft.Social.Command.Infra\Meicrosoft.Social.Command.Infra.csproj", "{2609974D-BFC4-4B0C-B0FE-4EF591998AC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meicrosoft.Social.Query.API", "src\Query\Meicrosoft.Social.Query.API\Meicrosoft.Social.Query.API.csproj", "{2EE27D22-2477-4711-BA1A-78876FD9A976}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meicrosoft.Social.Query.Domain", "src\Query\Meicrosoft.Social.Query.Domain\Meicrosoft.Social.Query.Domain.csproj", "{54824439-A09B-4A23-9996-51545E629851}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meicrosoft.Social.Query.Infra", "src\Query\Meicrosoft.Social.Query.Infra\Meicrosoft.Social.Query.Infra.csproj", "{607BCE3C-9100-41A8-B6AE-5A7DE78C5C80}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1E1B185-4463-4D0D-8968-8372915EE647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1E1B185-4463-4D0D-8968-8372915EE647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1E1B185-4463-4D0D-8968-8372915EE647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1E1B185-4463-4D0D-8968-8372915EE647}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC62C1BF-B05C-4D40-9238-63241E6DD824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC62C1BF-B05C-4D40-9238-63241E6DD824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC62C1BF-B05C-4D40-9238-63241E6DD824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC62C1BF-B05C-4D40-9238-63241E6DD824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F73EAEF7-68A2-40DE-A87C-774A34DD603C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F73EAEF7-68A2-40DE-A87C-774A34DD603C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F73EAEF7-68A2-40DE-A87C-774A34DD603C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F73EAEF7-68A2-40DE-A87C-774A34DD603C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2609974D-BFC4-4B0C-B0FE-4EF591998AC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2609974D-BFC4-4B0C-B0FE-4EF591998AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2609974D-BFC4-4B0C-B0FE-4EF591998AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2609974D-BFC4-4B0C-B0FE-4EF591998AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EE27D22-2477-4711-BA1A-78876FD9A976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE27D22-2477-4711-BA1A-78876FD9A976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EE27D22-2477-4711-BA1A-78876FD9A976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EE27D22-2477-4711-BA1A-78876FD9A976}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54824439-A09B-4A23-9996-51545E629851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54824439-A09B-4A23-9996-51545E629851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54824439-A09B-4A23-9996-51545E629851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54824439-A09B-4A23-9996-51545E629851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{607BCE3C-9100-41A8-B6AE-5A7DE78C5C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{607BCE3C-9100-41A8-B6AE-5A7DE78C5C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{607BCE3C-9100-41A8-B6AE-5A7DE78C5C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{607BCE3C-9100-41A8-B6AE-5A7DE78C5C80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A248B16-EB1B-4CDB-835D-C53C69EE806D} = {4F9D8333-A62C-4963-B268-2069FDE2C4D4}
+		{5F9118B0-8C5E-4AAA-B2FD-54EBC12FB9EA} = {4F9D8333-A62C-4963-B268-2069FDE2C4D4}
+		{875E02FF-63D1-4955-9125-A667CD156511} = {4F9D8333-A62C-4963-B268-2069FDE2C4D4}
+		{C1E1B185-4463-4D0D-8968-8372915EE647} = {3A248B16-EB1B-4CDB-835D-C53C69EE806D}
+		{BC62C1BF-B05C-4D40-9238-63241E6DD824} = {5F9118B0-8C5E-4AAA-B2FD-54EBC12FB9EA}
+		{F73EAEF7-68A2-40DE-A87C-774A34DD603C} = {5F9118B0-8C5E-4AAA-B2FD-54EBC12FB9EA}
+		{2609974D-BFC4-4B0C-B0FE-4EF591998AC1} = {5F9118B0-8C5E-4AAA-B2FD-54EBC12FB9EA}
+		{2EE27D22-2477-4711-BA1A-78876FD9A976} = {875E02FF-63D1-4955-9125-A667CD156511}
+		{54824439-A09B-4A23-9996-51545E629851} = {875E02FF-63D1-4955-9125-A667CD156511}
+		{607BCE3C-9100-41A8-B6AE-5A7DE78C5C80} = {875E02FF-63D1-4955-9125-A667CD156511}
 	EndGlobalSection
 EndGlobal

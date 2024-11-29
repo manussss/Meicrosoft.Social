@@ -1,0 +1,6 @@
+@Meicrosoft.Social.Query.API_HostAddress = http://localhost:5234
+
+GET {{Meicrosoft.Social.Query.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
