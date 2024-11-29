@@ -27,12 +27,35 @@ services:
       - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
     depends_on:
       - zookeeper
+  mongo:
+    image: mongo:latest
+    container_name: mongo-container
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data_container:/data/db
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=SP-MeicrosoftSocial#789
+      - MSSQL_DATABASE=MeicrosoftSocial
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data_meicrosoft_social:/var/opt/mssql
       
 volumes:
   zookeeper_data:
     driver: local
   kafka_data:
     driver: local
+  mongodb_data_container:
+    driver: local  
+  sql_data_meicrosoft_social:
+    driver: local  
    
 networks:
   default:    
