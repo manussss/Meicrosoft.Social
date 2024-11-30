@@ -1,4 +1,4 @@
-﻿namespace Meicrosoft.Social.Command.API.Events;
+﻿namespace Meicrosoft.Social.Core.Events;
 
 public class PostRemovedEvent : BaseEvent
 {

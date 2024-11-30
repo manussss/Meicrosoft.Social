@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Meicrosoft.Social.Core\Meicrosoft.Social.Core.csproj" />
+  </ItemGroup>
+
 </Project>
