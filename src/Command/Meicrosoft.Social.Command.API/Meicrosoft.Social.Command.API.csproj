@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -8,6 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Meicrosoft.Social.Core\Meicrosoft.Social.Core.csproj" />
+    <ProjectReference Include="..\Meicrosoft.Social.Command.Domain\Meicrosoft.Social.Command.Domain.csproj" />
+    <ProjectReference Include="..\Meicrosoft.Social.Command.Infra\Meicrosoft.Social.Command.Infra.csproj" />
   </ItemGroup>
 
 </Project>
