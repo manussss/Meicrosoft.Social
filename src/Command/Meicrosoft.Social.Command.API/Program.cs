@@ -4,6 +4,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.Configure<MongoDbConfig>(builder.Configuration.GetSection("MongoDbConfig"));
 builder.Services.AddScoped<IEventStoreRepository, EventStoreRepository>();
+builder.Services.AddScoped<IEventStore, EventStore>();
 
 var app = builder.Build();
 
