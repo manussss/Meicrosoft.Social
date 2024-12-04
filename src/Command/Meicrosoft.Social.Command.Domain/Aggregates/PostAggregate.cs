@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.Design;
+﻿namespace Meicrosoft.Social.Command.Domain.Aggregates;
 
-namespace Meicrosoft.Social.Command.Domain.Aggregates;
-
-internal class PostAggregate : AggregateRoot
+public class PostAggregate : AggregateRoot
 {
     private bool _active;
     private string _author;

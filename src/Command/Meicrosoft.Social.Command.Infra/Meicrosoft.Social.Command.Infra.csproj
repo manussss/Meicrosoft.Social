@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Meicrosoft.Social.Core\Meicrosoft.Social.Core.csproj" />
+    <ProjectReference Include="..\Meicrosoft.Social.Command.Domain\Meicrosoft.Social.Command.Domain.csproj" />
   </ItemGroup>
 
 </Project>
