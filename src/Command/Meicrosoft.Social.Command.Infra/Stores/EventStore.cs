@@ -1,6 +1,8 @@
 ﻿namespace Meicrosoft.Social.Command.Infra.Stores;
 
-public class EventStore(IEventStoreRepository eventStoreRepository) : IEventStore
+public class EventStore(
+    IEventStoreRepository eventStoreRepository, 
+    IEventProducer eventProducer) : IEventStore
 {
     public async Task<List<BaseEvent>> GetEventsAsync(Guid aggregateId)
     {
@@ -38,6 +40,9 @@ public class EventStore(IEventStoreRepository eventStoreRepository) : IEventStor
             };
 
             await eventStoreRepository.SaveAsync(eventModel);
+
+            var topic = Environment.GetEnvironmentVariable("KAFKA_TOPIC");
+            await eventProducer.ProduceAsync(topic!, @event);
         }
     }
 }

@@ -9,3 +9,6 @@ global using Meicrosoft.Social.Command.Infra.Handlers;
 global using Meicrosoft.Social.Core.Handlers;
 global using Meicrosoft.Social.Command.API.Commands;
 global using Meicrosoft.Social.Command.Infra.Dispatchers;
+global using Confluent.Kafka;
+global using Meicrosoft.Social.Command.Infra.Producers;
+global using Meicrosoft.Social.Core.Producers;

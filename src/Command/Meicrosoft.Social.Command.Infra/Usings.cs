@@ -8,3 +8,6 @@ global using Meicrosoft.Social.Core.Handlers;
 global using Meicrosoft.Social.Core.Infra;
 global using Microsoft.Extensions.Options;
 global using MongoDB.Driver;
+global using Confluent.Kafka;
+global using Meicrosoft.Social.Core.Producers;
+global using System.Text.Json;
