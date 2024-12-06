@@ -4,3 +4,8 @@ global using Meicrosoft.Social.Command.Infra.Repositories;
 global using Meicrosoft.Social.Core.Domain;
 global using Meicrosoft.Social.Command.Infra.Stores;
 global using Meicrosoft.Social.Core.Infra;
+global using Meicrosoft.Social.Command.Domain.Aggregates;
+global using Meicrosoft.Social.Command.Infra.Handlers;
+global using Meicrosoft.Social.Core.Handlers;
+global using Meicrosoft.Social.Command.API.Commands;
+global using Meicrosoft.Social.Command.Infra.Dispatchers;
