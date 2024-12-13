@@ -4,6 +4,9 @@ Action<DbContextOptionsBuilder> configureDbContext = (o => o.UseLazyLoadingProxi
 builder.Services.AddDbContext<DatabaseContext>(configureDbContext);
 builder.Services.AddSingleton(new DatabaseContextFactory(configureDbContext));
 
+var dataContext = builder.Services.BuildServiceProvider().GetRequiredService<DatabaseContext>();
+dataContext.Database.EnsureCreated();
+
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
