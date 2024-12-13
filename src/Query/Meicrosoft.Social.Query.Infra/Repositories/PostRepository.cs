@@ -7,7 +7,7 @@ public class PostRepository(DatabaseContextFactory databaseContextFactory) : IPo
         using var dbContext = databaseContextFactory.CreateDbContext();
 
         await dbContext.Posts.AddAsync(post);
-        await dbContext.SaveChangesAsync();
+        _ = await dbContext.SaveChangesAsync();
     }
 
     public async Task DeleteAsync(Guid id)
@@ -20,7 +20,7 @@ public class PostRepository(DatabaseContextFactory databaseContextFactory) : IPo
             return;
 
         dbContext.Posts.Remove(post);
-        await dbContext.SaveChangesAsync();
+        _ = await dbContext.SaveChangesAsync();
     }
 
     public async Task<List<Post>> GetAllAsync()
@@ -80,6 +80,6 @@ public class PostRepository(DatabaseContextFactory databaseContextFactory) : IPo
         using var dbContext = databaseContextFactory.CreateDbContext();
 
         dbContext.Posts.Update(post);
-        await dbContext.SaveChangesAsync();
+        _ = await dbContext.SaveChangesAsync();
     }
 }
