@@ -7,6 +7,10 @@ builder.Services.AddSingleton(new DatabaseContextFactory(configureDbContext));
 var dataContext = builder.Services.BuildServiceProvider().GetRequiredService<DatabaseContext>();
 dataContext.Database.EnsureCreated();
 
+builder.Services.AddScoped<IPostRepository, PostRepository>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+builder.Services.AddScoped<IEventHandler, Meicrosoft.Social.Query.Infra.Handlers.EventHandler>();
+
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
