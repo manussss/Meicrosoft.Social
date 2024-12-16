@@ -15,6 +15,7 @@ builder.Services.AddScoped<IEventConsumer, EventConsumer>();
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+builder.Services.AddHostedService<ConsumerHostedService>();
 
 var app = builder.Build();
 
