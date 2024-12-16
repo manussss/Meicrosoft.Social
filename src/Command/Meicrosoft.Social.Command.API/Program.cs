@@ -45,4 +45,16 @@ app.MapPost("api/v1/newpost", async (
     return Results.Created();
 });
 
+app.MapPut("api/v1/editmessage", async (
+    Guid id,
+    EditMessageCommand command,
+    ICommandDispatcher commandDispatcher
+    ) =>
+{
+    command.Id = id;
+    await commandDispatcher.SendAsync(command);
+
+    return Results.Ok();
+});
+
 app.Run();
