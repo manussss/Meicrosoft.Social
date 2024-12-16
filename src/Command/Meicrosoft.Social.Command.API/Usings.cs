@@ -12,3 +12,4 @@ global using Meicrosoft.Social.Command.Infra.Dispatchers;
 global using Confluent.Kafka;
 global using Meicrosoft.Social.Command.Infra.Producers;
 global using Meicrosoft.Social.Core.Producers;
+global using Meicrosoft.Social.Core.DTOs;

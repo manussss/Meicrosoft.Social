@@ -32,4 +32,17 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
+app.MapPost("api/v1/newpost", async (
+    NewPostCommand command,
+    ICommandDispatcher commandDispatcher
+    ) =>
+{
+    var id = Guid.NewGuid();
+    command.Id = id;
+
+    await commandDispatcher.SendAsync(command);
+
+    return Results.Created();
+});
+
 app.Run();
