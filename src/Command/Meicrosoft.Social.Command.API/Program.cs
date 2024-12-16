@@ -45,7 +45,7 @@ app.MapPost("api/v1/newpost", async (
     return Results.Created();
 });
 
-app.MapPut("api/v1/editmessage", async (
+app.MapPut("api/v1/editmessage/{id}", async (
     Guid id,
     EditMessageCommand command,
     ICommandDispatcher commandDispatcher
@@ -53,6 +53,16 @@ app.MapPut("api/v1/editmessage", async (
 {
     command.Id = id;
     await commandDispatcher.SendAsync(command);
+
+    return Results.Ok();
+});
+
+app.MapPut("api/v1/likepost/{id}", async (
+    Guid id,
+    ICommandDispatcher commandDispatcher
+    ) =>
+{
+    await commandDispatcher.SendAsync(new LikePostCommand { Id = id });
 
     return Results.Ok();
 });
