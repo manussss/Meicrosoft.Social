@@ -32,7 +32,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-app.MapPost("api/v1/newpost", async (
+app.MapPost("api/v1/post", async (
     NewPostCommand command,
     ICommandDispatcher commandDispatcher
     ) =>
@@ -45,7 +45,7 @@ app.MapPost("api/v1/newpost", async (
     return Results.Created();
 });
 
-app.MapPut("api/v1/editmessage/{id}", async (
+app.MapPut("api/v1/message/{id}", async (
     Guid id,
     EditMessageCommand command,
     ICommandDispatcher commandDispatcher
@@ -57,12 +57,24 @@ app.MapPut("api/v1/editmessage/{id}", async (
     return Results.Ok();
 });
 
-app.MapPut("api/v1/likepost/{id}", async (
+app.MapPut("api/v1/post/{id}", async (
     Guid id,
     ICommandDispatcher commandDispatcher
     ) =>
 {
     await commandDispatcher.SendAsync(new LikePostCommand { Id = id });
+
+    return Results.Ok();
+});
+
+app.MapPut("api/v1/comment/{id}", async (
+    Guid id,
+    AddCommentCommand command,
+    ICommandDispatcher commandDispatcher
+    ) =>
+{
+    command.Id = id;
+    await commandDispatcher.SendAsync(command);
 
     return Results.Ok();
 });
