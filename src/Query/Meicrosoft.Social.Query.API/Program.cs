@@ -10,6 +10,8 @@ dataContext.Database.EnsureCreated();
 builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<IEventHandler, Meicrosoft.Social.Query.Infra.Handlers.EventHandler>();
+builder.Services.Configure<ConsumerConfig>(builder.Configuration.GetSection(nameof(ConsumerConfig)));
+builder.Services.AddScoped<IEventConsumer, EventConsumer>();
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
