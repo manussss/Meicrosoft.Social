@@ -67,9 +67,21 @@ app.MapPut("api/v1/post/{id}", async (
     return Results.Ok();
 });
 
-app.MapPut("api/v1/comment/{id}", async (
+app.MapPost("api/v1/comment/{id}", async (
     Guid id,
     AddCommentCommand command,
+    ICommandDispatcher commandDispatcher
+    ) =>
+{
+    command.Id = id;
+    await commandDispatcher.SendAsync(command);
+
+    return Results.Ok();
+});
+
+app.MapPut("api/v1/comment/{id}", async (
+    Guid id,
+    EditCommentCommand command,
     ICommandDispatcher commandDispatcher
     ) =>
 {
