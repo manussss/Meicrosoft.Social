@@ -91,4 +91,16 @@ app.MapPut("api/v1/comment/{id}", async (
     return Results.Ok();
 });
 
+app.MapDelete("api/v1/comment/{id}", async (
+    Guid id,
+    RemoveCommentCommand command,
+    ICommandDispatcher commandDispatcher
+    ) =>
+{
+    command.Id = id;
+    await commandDispatcher.SendAsync(command);
+
+    return Results.Ok();
+});
+
 app.Run();
