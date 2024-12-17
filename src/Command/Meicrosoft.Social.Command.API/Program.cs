@@ -45,6 +45,18 @@ app.MapPost("api/v1/post", async (
     return Results.Created();
 });
 
+app.MapDelete("api/v1/post/{id}", async (
+    Guid id,
+    DeletePostCommand command,
+    ICommandDispatcher commandDispatcher
+    ) =>
+{
+    command.Id = id;
+    await commandDispatcher.SendAsync(command);
+
+    return Results.Ok();
+});
+
 app.MapPut("api/v1/message/{id}", async (
     Guid id,
     EditMessageCommand command,
